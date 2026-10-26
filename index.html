@@ -27,15 +27,15 @@ h1{font:600 clamp(34px,6.4vw,64px)/1.07 Georgia,serif;margin:0 0 16px;letter-spa
 .bar{display:flex;align-items:center;gap:7px;padding:11px 16px;border-bottom:1px solid var(--bd);color:var(--mu);font-size:13px}
 .bar i{width:10px;height:10px;border-radius:50%;background:var(--bd)}.bar span{margin-left:10px}
 .app{display:grid;grid-template-columns:1fr 240px}@media(max-width:720px){.app{grid-template-columns:1fr}}
-.cal{padding:18px 20px}.ch{display:flex;align-items:center;gap:10px;margin-bottom:12px}.ch b{font:600 22px Georgia,serif;flex:1}
+.cal{padding:18px 20px;background:var(--cb,transparent);color:var(--ci,inherit);transition:background .25s,color .25s}.ban{margin:-18px -20px 14px;height:84px;overflow:hidden}.ban svg{display:block;width:100%;height:100%}.ch{display:flex;align-items:center;gap:10px;margin-bottom:12px}.ch b{font:600 22px Georgia,serif;font-family:var(--cf,Georgia,serif);flex:1}
 .ch button{border:1px solid var(--bd);background:var(--bg);color:var(--tx);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px}
 .gr{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
-.gr div{padding:9px 0;border-radius:10px;font-size:15px}.gr .h{font-size:11px;color:var(--mu);letter-spacing:.08em;padding:4px 0}
-.gr .d{cursor:default;position:relative}.gr .d:hover{background:var(--soft)}.gr .o{color:var(--mu);opacity:.45}
-.gr .t{background:var(--ac);color:#fff;font-weight:700}.gr .e::after{content:"";position:absolute;left:50%;bottom:3px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--ac)}.gr .t.e::after{background:#fff}
+.gr div{padding:9px 0;border-radius:10px;font-size:15px}.gr .h{font-size:11px;color:var(--ca,var(--mu));letter-spacing:.08em;padding:4px 0}
+.gr .d{cursor:pointer;position:relative}.gr .d:hover{background:color-mix(in srgb,var(--ca,var(--ac)) 14%,transparent)}.gr .o{opacity:.3}.gr .s{outline:2px solid var(--ca,var(--ac));outline-offset:-2px}
+.gr .t{background:var(--ca,var(--ac));color:var(--cb,#fff);font-weight:700}.gr .e::after{content:"";position:absolute;left:50%;bottom:3px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--ca,var(--ac))}.gr .t.e::after{background:var(--cb,#fff)}
 .side{border-left:1px solid var(--bd);padding:18px;background:var(--soft)}@media(max-width:720px){.side{border-left:0;border-top:1px solid var(--bd)}}
 .side h4{margin:0 0 10px;font-size:13px;color:var(--mu);letter-spacing:.06em;text-transform:uppercase}
-.chip{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px}.chip i{width:34px;height:34px;border-radius:9px;flex:none}
+.chip{display:flex;align-items:center;gap:10px;padding:5px 6px;font-size:14px;width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:12px;color:inherit;font-family:inherit;cursor:pointer}.chip.on{border-color:var(--ac);background:var(--bg)}.chip small{display:block;color:var(--mu);font-size:11px}div.chip{cursor:default}.chip i{width:34px;height:34px;border-radius:9px;flex:none;border:1px solid var(--bd)}
 section{padding:64px 0}h2{font:600 clamp(26px,4vw,38px)/1.15 Georgia,serif;margin:0 0 10px}h2 em{color:var(--ac)}
 .sub{color:var(--mu);max-width:600px;margin:0 0 30px}
 .g5{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
@@ -58,6 +58,11 @@ footer{padding:48px 0 40px;color:var(--mu);font-size:14px}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}@media(max-width:700px){.fg{grid-template-columns:1fr 1fr}}
 footer h5{margin:0 0 10px;color:var(--tx);font-size:13px;letter-spacing:.06em;text-transform:uppercase}footer a{display:block;text-decoration:none;margin:6px 0}footer a:hover{color:var(--tx)}
 .cp{margin-top:30px;padding-top:18px;border-top:1px solid var(--bd);text-align:center}
+button.c{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer;display:block;width:100%}button.c:focus-visible{outline:2px solid var(--ac);outline-offset:2px}.c .ct{display:block;padding:13px 15px;color:inherit;font-size:inherit}.c .ct span{display:block}
+.dm{position:fixed;inset:0;z-index:100;background:rgba(20,15,10,.55);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}.dm[hidden]{display:none}
+.dbox{width:min(900px,100%);max-height:94vh;overflow:auto;background:var(--bg);border-radius:20px;padding:16px;position:relative}
+.dbox h3{margin:0 44px 2px 4px;font:600 22px Georgia,serif}.dbox p{margin:0 44px 12px 4px;color:var(--mu);font-size:14px}.dbox .win{margin:0}
+.dx{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--bd);background:var(--sf);color:var(--tx);cursor:pointer;font-size:16px}
 </style></head><body>
 <nav><div class="w"><a class="logo" href="#"><img src="data:image/png;base64,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" alt="">Kalendar</a>
 <div class="l"><a href="#designs">Designs</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a class="btn" href="#" data-web>Open app</a></div></div></nav>
@@ -69,22 +74,16 @@ footer h5{margin:0 0 10px;color:var(--tx);font-size:13px;letter-spacing:.06em;te
 <a class="btn" href="#" data-web>Open in browser</a> <a class="btn o" href="https://kartproduction.github.io/kalendarbykasign/download.html">Download for Android</a>
 <div class="sm">Works offline · Android app version: <span class="ver">see Releases</span></div>
 <div class="win"><div class="bar"><i></i><i></i><i></i><span>kalendar · this month</span></div>
-<div class="app"><div class="cal"><div class="ch"><b id="mt"></b><button id="pv" aria-label="Previous month">‹</button><button id="nx" aria-label="Next month">›</button></div><div class="gr" id="gr"></div></div>
-<div class="side"><h4>Designs</h4>
-<div class="chip"><i style="background:linear-gradient(#f6c7a1,#3f4d73)"></i>Mountain Serenity</div>
-<div class="chip"><i style="background:linear-gradient(#a3162a,#d9a441)"></i>Nepali Heritage</div>
-<div class="chip"><i style="background:linear-gradient(#fde6ec,#f06f8f)"></i>Blooming Seasons</div>
-<div class="chip"><i style="background:linear-gradient(#fff,#e1d2bb)"></i>Pure Minimal</div>
-<h4 style="margin-top:14px">Export</h4><div class="chip" style="color:var(--mu)">PNG · PDF · A4 · Letter</div></div></div></div>
+<div class="app" id="happ"></div></div>
 </div></header>
 
-<section id="designs"><div class="w"><h2>Five collections, <em>ten designs.</em></h2><p class="sub">Each design comes in phone (9:16) and desktop (16:9) layouts, ready for your own photographs.</p>
+<section id="designs"><div class="w"><h2>Five collections, <em>ten designs.</em></h2><p class="sub">Each design comes in phone (9:16) and desktop (16:9) layouts, ready for your own photographs. Tap a collection to try it.</p>
 <div class="g5">
-<div class="c"><i style="background:linear-gradient(#fff,#e1d2bb)"></i><div><b>Kasign Minimal</b><span>Pure Minimal · Modern Neutral</span></div></div>
-<div class="c"><i style="background:linear-gradient(#f6c7a1,#3f4d73)"></i><div><b>Kasign Nature</b><span>Mountain Serenity · Earth &amp; Sky</span></div></div>
-<div class="c"><i style="background:linear-gradient(#2b2d5b,#e9a06d)"></i><div><b>Kasign Inspire</b><span>Daily Inspiration · Life in Perspective</span></div></div>
-<div class="c"><i style="background:linear-gradient(#a3162a,#d9a441)"></i><div><b>Kasign Nepali Patro</b><span>Nepali Heritage · Nepal Panorama</span></div></div>
-<div class="c"><i style="background:linear-gradient(#cfe3c4,#f8c4d2)"></i><div><b>Kasign Planner</b><span>Botanical Grace · Blooming Seasons</span></div></div>
+<button type="button" class="c" data-c="0"><i style="background:linear-gradient(#fff,#e1d2bb)"></i><span class="ct"><b>Kasign Minimal</b><span>Pure Minimal · Modern Neutral</span></span></button>
+<button type="button" class="c" data-c="1"><i style="background:linear-gradient(#f6c7a1,#3f4d73)"></i><span class="ct"><b>Kasign Nature</b><span>Mountain Serenity · Earth &amp; Sky</span></span></button>
+<button type="button" class="c" data-c="2"><i style="background:linear-gradient(#2b2d5b,#e9a06d)"></i><span class="ct"><b>Kasign Inspire</b><span>Daily Inspiration · Life in Perspective</span></span></button>
+<button type="button" class="c" data-c="3"><i style="background:linear-gradient(#a3162a,#d9a441)"></i><span class="ct"><b>Kasign Nepali Patro</b><span>Nepali Heritage · Nepal Panorama</span></span></button>
+<button type="button" class="c" data-c="4"><i style="background:linear-gradient(#cfe3c4,#f8c4d2)"></i><span class="ct"><b>Kasign Planner</b><span>Botanical Grace · Blooming Seasons</span></span></button>
 </div></div></section>
 
 <section id="features" style="background:var(--soft)"><div class="w"><h2>One app. <em>Every month.</em></h2><p class="sub">Everything you need to make a calendar you’ll actually use.</p>
@@ -114,29 +113,89 @@ footer h5{margin:0 0 10px;color:var(--tx);font-size:13px;letter-spacing:.06em;te
 <div><h5>Legal</h5><a href="download.html">Download page</a><a href="privacy.html">Privacy</a><a href="license.html">License</a></div></div>
 <div class="cp"><a href="https://kartproduction.github.io/kasign/" style="color:inherit;text-decoration:none" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">© 2026 Kasign, a Kart Production practice.</a> Photos, quotes and fonts remain the property of their owners.</div></div></footer>
 
+<div class="dm" id="dm" hidden><div class="dbox" role="dialog" aria-modal="true" aria-labelledby="dt"><button class="dx" id="dx" aria-label="Close">✕</button><h3 id="dt"></h3><p id="dd"></p><div class="win"><div class="app" id="dapp"></div></div></div></div>
+
 <script>
 (function(){
 var M=["January","February","March","April","May","June","July","August","September","October","November","December"],T=new Date(),y=T.getFullYear(),m=T.getMonth(),EV={};
 try{EV=JSON.parse(localStorage.getItem("kk-ev")||"{}")}catch(e){}
 function pad(n){return String(n).padStart(2,"0")}
-function cal(){
-  var g=document.getElementById("gr");g.innerHTML="";document.getElementById("mt").textContent=M[m]+" "+y;
-  ["S","M","T","W","T","F","S"].forEach(function(s){var d=document.createElement("div");d.className="h";d.textContent=s;g.appendChild(d)});
-  var f=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),pm=new Date(y,m,0).getDate();
-  for(var i=0;i<42;i++){var d=document.createElement("div"),n=i-f+1,out=n<1||n>dm;d.className="d"+(out?" o":"");
-    d.textContent=n<1?pm+n:n>dm?n-dm:n;
-    if(!out){if(y==T.getFullYear()&&m==T.getMonth()&&n==T.getDate())d.className+=" t";if(EV[y+"-"+pad(m+1)+"-"+pad(n)])d.className+=" e"}
-    g.appendChild(d)}
+var DS=[
+["Pure Minimal","Minimal",["#ffffff","#ffffff"],"#1a1a1a","#1a1a1a","system-ui,-apple-system,'Segoe UI',sans-serif",null],
+["Modern Neutral","Minimal",["#efe6d8","#e1d2bb"],"#4a3b2c","#9a7b57","Georgia,serif",null],
+["Mountain Serenity","Nature","#f7f4ef","#26324f","#c26a3d","Georgia,serif",{t:"range",sky:["#f6c7a1","#8a97bd"],rd:["#5b6c91","#3f4d73","#26324f"]}],
+["Earth & Sky","Nature","#fbfaf5","#2f4a35","#3a86c6","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"hills",sky:["#7fbdee","#eaf5fc"],rd:["#8fbb78","#5f9650","#3d6b3a"]}],
+["Daily Inspiration","Inspire","#1c1b33","#f4ecdf","#f0a96c","Georgia,serif",{t:"range",sky:["#2b2d5b","#e9a06d"],rd:["#473a6b","#2e2a52","#1a1a38"]}],
+["Life in Perspective","Inspire","#fdf6ee","#5a2f2a","#b8503f","Georgia,serif",{t:"hills",sky:["#f4c9b6","#fbeee4"],rd:["#d99a85","#b8715f","#8a4b42"]}],
+["Nepali Heritage","Nepali Patro","#fbf3e2","#6b1020","#a3162a","Georgia,serif",{t:"mandala",sky:["#f6ead2","#efd9ae"],rd:["#a3162a","#d9a441","#7a0f1f","#e8c36a"]}],
+["Nepal Panorama","Nepali Patro","#fff7ea","#4a2a1f","#d9532b","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"range",sky:["#ffd9a0","#e98a5b"],rd:["#f3efe8","#8c6b8a","#3b2f4d"]}],
+["Botanical Grace","Planner","#f6faf2","#2c4a2a","#5e8a52","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"flora",sky:["#e9f2e2","#cfe3c4"],rd:["#5e8a52"],petal:"#ffffff",core:"#e8b84a"}],
+["Blooming Seasons","Planner","#fff8fa","#6b2a3d","#d6486f","Georgia,serif",{t:"flora",sky:["#fde6ec","#f8c4d2"],rd:["#7fa56a"],petal:"#f06f8f",core:"#ffd36b"}]
+],cur=2,sel=null;
+function swatch(d){var a=d[6];return a?"linear-gradient(180deg,"+a.sky[0]+","+a.sky[1]+")":"linear-gradient(135deg,"+d[2][0]+","+d[2][1]+")"}
+function banner(a){
+  var W=300,H=90,o='<svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+a.sky[0]+'"/><stop offset="1" stop-color="'+a.sky[1]+'"/></linearGradient></defs><rect width="300" height="90" fill="url(#bg)"/>';
+  if(a.t=="range"||a.t=="hills"){
+    o+='<circle cx="215" cy="26" r="9" fill="#fff" opacity=".55"/>';
+    a.rd.forEach(function(c,i){var base=54+i*12,amp=30-i*6,pts="0,90";
+      for(var x=0;x<=300;x+=10){var v=a.t=="hills"?.5+.5*Math.sin(x*.03+i*2):Math.abs(Math.sin(x*.045+i*3))*.6+Math.abs(Math.sin(x*.13+i))*.4;pts+=" "+x+","+(base-amp*v).toFixed(1)}
+      o+='<polygon points="'+pts+' 300,90" fill="'+c+'"/>'})
+  }
+  if(a.t=="flora"){for(var i=0;i<7;i++){var fx=20+i*43,fy=26+((i*37)%40),r=11+(i%3)*3;o+='<ellipse cx="'+(fx+r)+'" cy="'+(fy+r*.6)+'" rx="'+r*.8+'" ry="'+r*.25+'" fill="'+a.rd[0]+'" transform="rotate(30 '+fx+' '+fy+')"/>';for(var k=0;k<8;k++)o+='<ellipse cx="'+(fx+r*.6)+'" cy="'+fy+'" rx="'+r*.55+'" ry="'+r*.24+'" fill="'+a.petal+'" transform="rotate('+k*45+' '+fx+' '+fy+')"/>';o+='<circle cx="'+fx+'" cy="'+fy+'" r="'+r*.22+'" fill="'+a.core+'"/>'}}
+  if(a.t=="mandala"){for(var j=0;j<4;j++){var R=40-j*8,n=8+j*4;for(var q=0;q<n;q++)o+='<ellipse cx="'+(150+R*.7)+'" cy="45" rx="'+R*.28+'" ry="'+R*.1+'" fill="'+a.rd[j%4]+'" opacity=".88" transform="rotate('+q*360/n+' 150 45)"/>'}o+='<circle cx="150" cy="45" r="4" fill="'+a.rd[1]+'"/>'}
+  return o+"</svg>"
 }
-document.getElementById("pv").onclick=function(){m--;if(m<0){m=11;y--}cal()};
-document.getElementById("nx").onclick=function(){m++;if(m>11){m=0;y++}cal()};cal();
+function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e}
+function mountApp(root,idx,start,showExport){
+  var cur=start||0,y=T.getFullYear(),m=T.getMonth(),sel=null;
+  root.innerHTML="";
+  var cal=el("div","cal"),ban=el("div","ban"),ch=el("div","ch"),mt=el("b"),pv=el("button"),nx=el("button"),gr=el("div","gr"),side=el("div","side"),h=el("h4"),dl=el("div");
+  pv.textContent="‹";pv.setAttribute("aria-label","Previous month");nx.textContent="›";nx.setAttribute("aria-label","Next month");
+  ch.appendChild(mt);ch.appendChild(pv);ch.appendChild(nx);cal.appendChild(ban);cal.appendChild(ch);cal.appendChild(gr);
+  h.textContent="Designs";side.appendChild(h);side.appendChild(dl);
+  if(showExport){var h2=el("h4");h2.style.marginTop="14px";h2.textContent="Export";var ex=el("div","chip");ex.style.color="var(--mu)";ex.textContent="PNG · PDF · A4 · Letter";side.appendChild(h2);side.appendChild(ex)}
+  root.appendChild(cal);root.appendChild(side);
+  function theme(){
+    var d=DS[idx[cur]];
+    cal.style.setProperty("--cb",typeof d[2]=="string"?d[2]:d[2][0]);cal.style.setProperty("--ci",d[3]);cal.style.setProperty("--ca",d[4]);cal.style.setProperty("--cf",d[5]);
+    cal.style.background=typeof d[2]=="string"?d[2]:"linear-gradient(135deg,"+d[2][0]+","+d[2][1]+")";
+    ban.style.display=d[6]?"":"none";ban.innerHTML=d[6]?banner(d[6]):"";
+    dl.innerHTML="";
+    idx.forEach(function(k,i){var x=DS[k],e=el("button","chip"+(i==cur?" on":""));e.type="button";
+      var sw=el("i");sw.style.background=swatch(x);var t=el("span"),sm=el("small"),w=el("span");t.textContent=x[0];sm.textContent=x[1];
+      w.appendChild(t);w.appendChild(sm);e.appendChild(sw);e.appendChild(w);e.onclick=function(){cur=i;theme()};dl.appendChild(e)});
+  }
+  function grid(){
+    gr.innerHTML="";mt.textContent=M[m]+" "+y;
+    ["S","M","T","W","T","F","S"].forEach(function(s2){var d=el("div","h");d.textContent=s2;gr.appendChild(d)});
+    var f=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),pm=new Date(y,m,0).getDate();
+    for(var i=0;i<42;i++){var d=el("div"),n=i-f+1,out=n<1||n>dm;d.className="d"+(out?" o":"");
+      d.textContent=n<1?pm+n:n>dm?n-dm:n;
+      if(!out){var key=y+"-"+pad(m+1)+"-"+pad(n);if(sel==key)d.className+=" s";d.onclick=(function(k){return function(){sel=k;grid()}})(key);
+        if(y==T.getFullYear()&&m==T.getMonth()&&n==T.getDate())d.className+=" t";if(EV[key])d.className+=" e"}
+      gr.appendChild(d)}
+  }
+  pv.onclick=function(){m--;if(m<0){m=11;y--}grid()};nx.onclick=function(){m++;if(m>11){m=0;y++}grid()};
+  theme();grid();
+}
+var CC=[["Kasign Minimal",[0,1],"Clean and modern everyday calendars."],["Kasign Nature",[2,3],"Nature photography and scenic art."],["Kasign Inspire",[4,5],"Quotes, motivation and life lessons."],["Kasign Nepali Patro",[6,7],"Nepali BS dates, festivals and cultural designs."],["Kasign Planner",[8,9],"Productivity, work and goal-setting planners."]],lastBtn=null;
+function openDm(i,from){
+  lastBtn=from;document.getElementById("dt").textContent=CC[i][0];document.getElementById("dd").textContent=CC[i][2]+" Tap a design to switch, or tap a date.";
+  mountApp(document.getElementById("dapp"),CC[i][1],0,false);document.getElementById("dm").hidden=false;document.body.style.overflow="hidden";document.getElementById("dx").focus();
+}
+function closeDm(){document.getElementById("dm").hidden=true;document.body.style.overflow="";if(lastBtn)lastBtn.focus()}
+Array.prototype.forEach.call(document.querySelectorAll(".c[data-c]"),function(b){b.onclick=function(){openDm(+b.getAttribute("data-c"),b)}});
+document.getElementById("dx").onclick=closeDm;
+document.getElementById("dm").onclick=function(e){if(e.target==this)closeDm()};
+document.addEventListener("keydown",function(e){if(e.key=="Escape"&&!document.getElementById("dm").hidden)closeDm()});
+mountApp(document.getElementById("happ"),[0,2,4,6,9],1,true);
 var TABS=[
 ["Designs","Ten designs, five collections","Minimal, Nature, Inspire, Nepali Patro, and Planner, each built from one reusable layout.",["Portrait 9:16 and landscape 16:9","Your photograph as the main artwork","Readable dates over any background"],"linear-gradient(135deg,#3f4d73,#f6c7a1)","10 designs<br>20 layouts"],
 ["Nepali dates","AD, BS, or both","Show Bikram Sambat dates beside the Gregorian ones, with Nepali weekday names and a short festival list.",["AD only, AD + BS, or BS emphasis","Nepali weekdays and numerals","Editable festival list"],"linear-gradient(135deg,#7a0f1f,#d9a441)","२०८३ कार्तिक"],
 ["Export","PNG wallpapers and PDFs","Save a wallpaper for your phone or desktop, or a print-ready PDF.",["PNG at 1080×1920 or 1920×1080","PDF in A4 or Letter","Share from your phone"],"linear-gradient(135deg,#2f4a35,#8fbb78)","PNG · PDF"],
-["Customize","Make it yours","Change the accent color and font, pick the first day of the week, set your own brand line, and add your own quote.",["Accent color and fonts","Week starts Sunday or Monday","Your own quote and author"],"linear-gradient(135deg,#b5562b,#f0a96c)","Your colors,<br>your quote"],
+["Customize","Make it yours","Change the accent color and font, pick the first day of the week, and add your own quote.",["Accent color and fonts","Week starts Sunday or Monday","Your own quote and author"],"linear-gradient(135deg,#b5562b,#f0a96c)","Your colors,<br>your quote"],
 ["Events","Personal events and notes","Add events to any date. They appear on your calendar and stay on your device.",["Dots on dates with events","Notes shown inside planner boxes","Saved locally, no account"],"linear-gradient(135deg,#6b2a3d,#f06f8f)","Plan your<br>month"],
-["Offline","Works without internet","Install the Android app or add the website to your home screen and keep using it anywhere.",["No account or sign-in","Private by design","Free and open source"],"linear-gradient(135deg,#1c1b33,#473a6b)","Offline<br>first"]];
+["Offline","Works without internet","Install the Android app or add the website to your home screen and keep using it anywhere.",["No account or sign-in","Private by design","Free to use"],"linear-gradient(135deg,#1c1b33,#473a6b)","Offline<br>first"]];
 var tb=document.getElementById("tb"),pn=document.getElementById("pn");
 function show(i){
   Array.prototype.forEach.call(tb.children,function(b,k){b.className=k==i?"on":""});var t=TABS[i];
