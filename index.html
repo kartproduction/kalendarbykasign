@@ -63,6 +63,13 @@ button.c{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer;dis
 .dbox{width:min(900px,100%);max-height:94vh;overflow:auto;background:var(--bg);border-radius:20px;padding:16px;position:relative}
 .dbox h3{margin:0 44px 2px 4px;font:600 22px Georgia,serif}.dbox p{margin:0 44px 12px 4px;color:var(--mu);font-size:14px}.dbox .win{margin:0}
 .dx{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--bd);background:var(--sf);color:var(--tx);cursor:pointer;font-size:16px}
+.cal.pl .gr{gap:0;border:2px solid var(--pl);background:#fff;color:#111}.cal.pl.pb .gr{border-radius:14px;overflow:hidden}
+.cal.pl .gr div{border-radius:0;font-size:13px;padding:3px 5px;border-right:1px solid var(--pl);border-bottom:1px solid var(--pl);min-height:38px;text-align:left;background:#fff;color:#111}
+.cal.pl .gr .h{background:var(--ph);font-weight:700;letter-spacing:.06em;text-align:center;min-height:0;padding:6px 0;font-size:11px}
+.cal.pl .gr .d:hover{background:#f6f6f6}.cal.pl .gr .t{background:var(--pt);color:#111}.cal.pl .gr .e::after{background:#111}.cal.pl .gr .t.e::after{background:#111}
+.cal.pl .gr .b{background:#fff;cursor:default}
+.cal.pl .nb{margin-top:10px;background:#fff;border:2px solid var(--pl);color:#111;padding:8px 10px;font-size:11px;letter-spacing:.08em;font-weight:700;min-height:58px}.cal.pl.pb .nb{border-radius:14px}.cal.pl.pa .nb{text-align:center}
+.cal.pl .ch b{color:#111}.cal.pl.pa .ch b{text-transform:uppercase;font-weight:400}.cal.pl.pb .ch b{font-weight:800}
 </style></head><body>
 <nav><div class="w"><a class="logo" href="#"><img src="data:image/png;base64,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" alt="">Kalendar</a>
 <div class="l"><a href="#designs">Designs</a><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a class="btn" href="#" data-web>Open app</a></div></div></nav>
@@ -129,10 +136,10 @@ var DS=[
 ["Life in Perspective","Inspire","#fdf6ee","#5a2f2a","#b8503f","Georgia,serif",{t:"hills",sky:["#f4c9b6","#fbeee4"],rd:["#d99a85","#b8715f","#8a4b42"]}],
 ["Nepali Heritage","Nepali Patro","#fbf3e2","#6b1020","#a3162a","Georgia,serif",{t:"mandala",sky:["#f6ead2","#efd9ae"],rd:["#a3162a","#d9a441","#7a0f1f","#e8c36a"]}],
 ["Nepal Panorama","Nepali Patro","#fff7ea","#4a2a1f","#d9532b","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"range",sky:["#ffd9a0","#e98a5b"],rd:["#f3efe8","#8c6b8a","#3b2f4d"]}],
-["Botanical Grace","Planner","#f6faf2","#2c4a2a","#5e8a52","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"flora",sky:["#e9f2e2","#cfe3c4"],rd:["#5e8a52"],petal:"#ffffff",core:"#e8b84a"}],
-["Blooming Seasons","Planner","#fff8fa","#6b2a3d","#d6486f","Georgia,serif",{t:"flora",sky:["#fde6ec","#f8c4d2"],rd:["#7fa56a"],petal:"#f06f8f",core:"#ffd36b"}]
+["Botanical Grace","Planner",["#faeff4","#faeff4"],"#111111","#f3b9d4","Georgia,serif",{t:"plan",k:"a",head:"#fde7f1",line:"#111111",today:"#f3b9d4"}],
+["Blooming Seasons","Planner",["#f2eafa","#f2eafa"],"#222222","#cdb7ee","system-ui,-apple-system,'Segoe UI',sans-serif",{t:"plan",k:"b",head:"#ffffff",line:"#333333",today:"#cdb7ee"}]
 ],cur=2,sel=null;
-function swatch(d){var a=d[6];return a?"linear-gradient(180deg,"+a.sky[0]+","+a.sky[1]+")":"linear-gradient(135deg,"+d[2][0]+","+d[2][1]+")"}
+function swatch(d){var a=d[6];a=a&&a.t!="plan"?a:null;return a?"linear-gradient(180deg,"+a.sky[0]+","+a.sky[1]+")":"linear-gradient(135deg,"+d[2][0]+","+d[2][1]+")"}
 function banner(a){
   var W=300,H=90,o='<svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+a.sky[0]+'"/><stop offset="1" stop-color="'+a.sky[1]+'"/></linearGradient></defs><rect width="300" height="90" fill="url(#bg)"/>';
   if(a.t=="range"||a.t=="hills"){
@@ -159,21 +166,29 @@ function mountApp(root,idx,start,showExport){
     var d=DS[idx[cur]];
     cal.style.setProperty("--cb",typeof d[2]=="string"?d[2]:d[2][0]);cal.style.setProperty("--ci",d[3]);cal.style.setProperty("--ca",d[4]);cal.style.setProperty("--cf",d[5]);
     cal.style.background=typeof d[2]=="string"?d[2]:"linear-gradient(135deg,"+d[2][0]+","+d[2][1]+")";
-    ban.style.display=d[6]?"":"none";ban.innerHTML=d[6]?banner(d[6]):"";
+    var pl=d[6]&&d[6].t=="plan";cal.className="cal"+(pl?" pl p"+d[6].k:"");
+    if(pl){cal.style.setProperty("--pl",d[6].line);cal.style.setProperty("--ph",d[6].head);cal.style.setProperty("--pt",d[6].today)}
+    ban.style.display=d[6]&&!pl?"":"none";ban.innerHTML=d[6]&&!pl?banner(d[6]):"";
+    grid();
     dl.innerHTML="";
     idx.forEach(function(k,i){var x=DS[k],e=el("button","chip"+(i==cur?" on":""));e.type="button";
       var sw=el("i");sw.style.background=swatch(x);var t=el("span"),sm=el("small"),w=el("span");t.textContent=x[0];sm.textContent=x[1];
       w.appendChild(t);w.appendChild(sm);e.appendChild(sw);e.appendChild(w);e.onclick=function(){cur=i;theme()};dl.appendChild(e)});
   }
   function grid(){
-    gr.innerHTML="";mt.textContent=M[m]+" "+y;
-    ["S","M","T","W","T","F","S"].forEach(function(s2){var d=el("div","h");d.textContent=s2;gr.appendChild(d)});
-    var f=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),pm=new Date(y,m,0).getDate();
-    for(var i=0;i<42;i++){var d=el("div"),n=i-f+1,out=n<1||n>dm;d.className="d"+(out?" o":"");
+    var pl=cal.className.indexOf("pl")>-1,pa=cal.className.indexOf("pa")>-1;
+    gr.innerHTML="";mt.textContent=(pl&&pa?M[m].toUpperCase():M[m])+" "+y;
+    var old=cal.querySelector(".nb");if(old)cal.removeChild(old);
+    var hd=pl?["MON","TUE","WED","THU","FRI","SAT","SUN"]:["S","M","T","W","T","F","S"];
+    hd.forEach(function(s2){var d=el("div","h");d.textContent=s2;gr.appendChild(d)});
+    var f=pl?(new Date(y,m,1).getDay()+6)%7:new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),pm=new Date(y,m,0).getDate(),cnt=pl?Math.ceil((f+dm)/7)*7:42;
+    for(var i=0;i<cnt;i++){var d=el("div"),n=i-f+1,out=n<1||n>dm;d.className="d"+(out?" o":"");
+      if(pl&&out){d.className="b";gr.appendChild(d);continue}
       d.textContent=n<1?pm+n:n>dm?n-dm:n;
       if(!out){var key=y+"-"+pad(m+1)+"-"+pad(n);if(sel==key)d.className+=" s";d.onclick=(function(k){return function(){sel=k;grid()}})(key);
         if(y==T.getFullYear()&&m==T.getMonth()&&n==T.getDate())d.className+=" t";if(EV[key])d.className+=" e"}
       gr.appendChild(d)}
+    if(pl){var nb=el("div","nb");nb.textContent=pa?"NOTES":"NOTES  ·  EVENTS  ·  FOR NEXT MONTH";cal.appendChild(nb)}
   }
   pv.onclick=function(){m--;if(m<0){m=11;y--}grid()};nx.onclick=function(){m++;if(m>11){m=0;y++}grid()};
   theme();grid();
