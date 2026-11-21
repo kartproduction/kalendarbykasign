@@ -1,117 +1,64 @@
-# Kalendar by Kasign
+# Kalendar by Kasign — website
 
-An offline-first calendar app and web app with 10 designs, portrait and landscape layouts, PNG/PDF export, Nepali (BS) dates, festivals, events, and customization.
+The public website for **Kalendar by Kasign**: https://kartproduction.github.io/kalendarbykasign/
 
-**Live web app:** https://kartproduction.github.io/kalendarbykasign/
-**Android APK:** see the [Releases](https://github.com/kartproduction/kalendar/releases) page
+It shows the designs, lets visitors try a sample of each collection, and sends them to the app.
 
-> **View-only source.** This repository is public so you can see how the app was made and learn from it. The code is **not** free to copy, host, or reuse. See [License](#license).
+- **Web app:** https://kartproduction.github.io/kalendar/
+- **Android app (APK):** the download page picks the newest APK from [kartproduction/kalendar Releases](https://github.com/kartproduction/kalendar/releases)
+- **App source:** https://github.com/kartproduction/kalendar
 
----
+> **View-only source.** The website, designs, photos and branding are not free to copy or reuse. See [LICENSE](LICENSE).
 
-## Features
-
-- 10 calendar designs (colors, fonts, quotes, art styles)
-- Portrait and landscape layouts
-- Export as PNG or PDF
-- Nepali Bikram Sambat (BS) dates, 2082–2088 BS, alongside AD dates
-- Festivals and public events
-- Add your own events
-- Works offline after the first visit
-- Installable on a phone home screen (web app) or as an Android app
-
-## How it was made
-
-| Part | Technology |
-| --- | --- |
-| App code | HTML, CSS, JavaScript (single `www/index.html`) |
-| Android app | [Capacitor](https://capacitorjs.com/) (Filesystem and Share plugins) |
-| PDF export | [jsPDF](https://github.com/parallax/jsPDF) (MIT) |
-| Web hosting | GitHub Pages, deployed by GitHub Actions |
-| APK builds | GitHub Actions (debug build and signed release) |
-
-**Project structure**
+## Folder structure
 
 ```
-kalendar/
-├── www/                 # the app (HTML, CSS, JS, assets)
-├── scripts/             # build helper scripts
-├── .github/workflows/   # GitHub Actions (web deploy, APK build)
-├── capacitor.config.json
-├── package.json
+kalendarbykasign/
+├── index.html        main page (design samples, features, FAQ)
+├── download.html     phone download page ("GET THE APP")
+├── privacy.html
+├── license.html
+├── config.js         points the site at the app repo (edit here)
+├── links.js          finds the newest APK and fills the links
 ├── LICENSE
-└── README.md
+├── README.md
+└── .github/workflows/  publishes the site to GitHub Pages
 ```
 
-**Notes on the data**
+Only website files belong in this repository. App files (`www/`, `package.json`, `capacitor.config.json`, build scripts) belong in the `kalendar` repository.
 
-- `DESIGNS` holds names, colors, fonts, quotes, art type, and collection for each design.
-- `BSD` holds the BS month lengths for 2082–2088. Year 2083 matches published calendars; other years come from public tables and are not independently verified. Anchor date: Baisakh 1, 2083 = 14 Apr 2026.
-- `FEST` is the festival list, stored as `[start, end, name]` in AD dates.
+## config.js
 
-## Build notes (for the maintainer)
-
-<details>
-<summary>Build the APK online (no Android Studio needed)</summary>
-
-1. Push this repo to GitHub.
-2. Open **Actions → Build APK → Run workflow**.
-3. After a few minutes, the APK `Kalendar-v1.0.N.apk` appears under **Releases**.
-
-This is a debug-signed build for testing. Each run uses a new debug key, so a newer build may not install over an older one (uninstall first). For updates that install over the top, use the signed release below.
-</details>
-
-<details>
-<summary>Local setup</summary>
-
-```
-npm install @capacitor/core @capacitor/android @capacitor/filesystem @capacitor/share jspdf
-npm install -D @capacitor/cli
-npx cap add android
-npm run sync
+```js
+window.KK = {
+  appRepo: "kartproduction/kalendar",
+  webApp: "https://kartproduction.github.io/kalendar/",
+  apkUrl: ""   // leave empty to use the newest APK in Releases
+};
 ```
 
-Then open `android/` in Android Studio, or run `npm run apk:debug`. The APK is created in `android/app/build/outputs/apk/debug/`. Test on a real phone.
-</details>
+## Update the site
 
-<details>
-<summary>Signed release APK</summary>
-
-1. Create a keystore once and back it up:
-   `keytool -genkey -v -keystore release.jks -alias kalendar -keyalg RSA -keysize 2048 -validity 10000`
-2. In GitHub **Settings → Secrets**, add `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_PASSWORD`, and `KEY_ALIAS`.
-3. Tag and push: `git tag v1.0.0 && git push origin v1.0.0`. The signed APK is attached to the release.
-
-Never commit the keystore or passwords. Use the same key for every update.
-</details>
-
-<details>
-<summary>Web app (GitHub Pages)</summary>
-
-Go to **Settings → Pages → Source: GitHub Actions**. The deploy workflow publishes the `www/` folder. The app works offline after the first visit.
-</details>
-
-<details>
-<summary>Photos and app icon</summary>
-
-- Add `03.jpg` to `10.jpg` in `www/assets/images/`. They load automatically. Photos added inside the app last only for the session.
-- `assets/icon-only.png` is a placeholder. Replace it with your logo, then run `npx @capacitor/assets generate --android` after `npx cap add android`.
-</details>
-
-If a build fails, check the current Capacitor Android docs, because Capacitor, Gradle, and Java requirements change over time.
-
-## Contributing
-
-Bug reports and suggestions are welcome through [Issues](https://github.com/kartproduction/kalendar/issues). Pull requests are accepted for review, but the owner decides what gets merged. By submitting a contribution, you agree it may be used in this project under the same license.
-
-## License
-
-Copyright (c) 2026 kartproduction. All rights reserved.
-
-The source code is visible for **viewing and learning only**. You may not copy, host, redistribute, modify for your own use, or build derivative products from it without written permission. See [LICENSE](LICENSE) for the full terms.
-
-Third-party components (such as jsPDF, Capacitor, and any fonts) keep their own licenses. Photos, fonts, and quotes used in the designs have their own rights and are not covered by any permission to reuse this code.
+Upload the changed file in the repo root (**Add file > Upload files**). GitHub Pages publishes it within a minute or two. Use a hard refresh to see changes.
 
 ## Contact
 
 GitHub: [@kartproduction](https://github.com/kartproduction)
+
+## Design previews (shots/)
+
+The "See them in action" strip on the home page shows `shots/01.jpg` to `shots/10.jpg`. If a `.jpg` is missing, it falls back to `shots/01.png` to `shots/10.png`, which are previews made from the app with placeholder artwork. To show your own photos: open the app, choose a design, **Save PNG** (portrait), convert it to a `.jpg` about 360×640 or larger, and upload it as `shots/NN.jpg` (01 = Pure Minimal, 02 = Modern Neutral, 03 = Mountain Serenity, 04 = Earth & Sky, 05 = Daily Inspiration, 06 = Life in Perspective, 07 = Nepali Heritage, 08 = Nepal Panorama, 09 = Botanical Grace, 10 = Blooming Seasons).
+
+## Link preview image
+
+`og-image.png` (1200×630) is the picture shown when the site is shared on WhatsApp, Facebook and similar apps. Keep it in the top folder.
+
+## Calendar data (Nepali dates and festivals)
+
+`data/calendar-data.json` is read by the app. Edit it when the government publishes a new holiday list or you correct a BS year, then run `python3 scripts/check-calendar-data.py data/calendar-data.json` and commit. Full steps are in `data/README.md`. Raise `version` every time, or the app ignores the change.
+
+## Other pages and features
+
+- `credits.html`: third-party licenses, fonts, photographs and data sources.
+- "What's new" list on the home page: edit the `<ul class="wn">` list in `index.html`.
+- Nepali version of the home page: the **नेपाली / English** button in the top bar. Translations are in the `NS` list at the top of the script in `index.html`. Please have a Nepali speaker review them.
