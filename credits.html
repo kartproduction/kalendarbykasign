@@ -4,7 +4,7 @@
 <meta name="description" content="Open-source components, fonts, photographs and data sources used by Kalendar by Kasign.">
 <style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#1f1d1a;background:#faf8f4}@media(prefers-color-scheme:dark){body{background:#171513;color:#f2eee8}a{color:#e08a5c}}h1,h2{font-family:Georgia,serif}h2{margin-top:30px}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #8884;padding:8px 6px;text-align:left;vertical-align:top}a{color:#b5562b}</style></head><body>
 <h1>Licenses &amp; credits</h1>
-<p>Kalendar by Kasign is © 2026 Kasign, a Kart Production practice. The app, website, designs, photographs and branding are covered by the <a href="license.html">License</a>. This page lists what Kalendar uses from other people, and thanks them.</p>
+<p>Kalendar by Kasign is © <span class="yr" data-start="2026">2026</span> Kasign, a Kart Production practice. The app, website, designs, photographs and branding are covered by the <a href="license.html">License</a>. This page lists what Kalendar uses from other people, and thanks them.</p>
 
 <h2>Software</h2>
 <table>
@@ -35,4 +35,5 @@
 </ul>
 
 <p>Corrections or credits we missed: <a href="mailto:khadanacharya@gmail.com">khadanacharya@gmail.com</a></p>
-<p><a href="./">← Back</a></p></body></html>
+<p><a href="./">← Back</a></p><script>document.querySelectorAll(".yr").forEach(function(e){var s=+e.dataset.start||2026,y=new Date().getFullYear();e.textContent=y>s?s+"–"+y:s});</script>
+</body></html>
