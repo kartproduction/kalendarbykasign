@@ -38,7 +38,9 @@ h1{font:700 clamp(38px,11vw,54px)/1.08 system-ui,-apple-system,"Segoe UI",sans-s
 .how{margin:22px 0 0;text-align:left;border:1px solid var(--bd);border-radius:14px;padding:14px 18px;font-size:14.5px}
 .how b{display:block;margin-bottom:6px}.how ol{margin:0;padding-left:20px}.how li{margin:5px 0}.how p{margin:8px 0 0;color:var(--mu);font-size:13px}
 .webbtn,.ios{display:none}.ios{margin:16px 0 0;color:var(--mu);font-size:14px}
-html.na .apk,html.na .how,html.na .andonly{display:none}html.na .webbtn{display:block}html.isios .ios{display:block}
+.dlnote{display:none;margin:12px 0 0;color:var(--mu);font-size:13px}
+html.na .andonly{display:none}html.na .webbtn{display:block}html.na .apk{background:transparent;color:var(--ac);border:2px solid var(--ac);box-shadow:none;margin-top:14px}html.na .apk:hover{background:var(--bg)}
+html.na:not(.isios) .dlnote{display:block}html.isios .apk,html.isios .how,html.isios .dlnote{display:none}html.isios .ios{display:block}
 .hint{color:var(--mu);font-size:13px;margin:22px 0 0}.hint a{color:var(--ac)}
 </style></head><body><div class="pg">
 <div class="tb"><button type="button" id="tm" aria-label="Dark mode">🌙</button><button type="button" id="lt" aria-label="Language: English or Nepali">नेपाली</button></div>
@@ -53,8 +55,9 @@ html.na .apk,html.na .how,html.na .andonly{display:none}html.na .webbtn{display:
 <div class="pn"><small id="yr"></small><b id="mo"></b><div class="g" id="gd"></div></div>
 </div></div>
 <h1 data-t="h1">Kalendar App Now Available!</h1>
-<a class="get apk" href="#" data-t="get">GET THE APP</a>
 <a class="get webbtn" href="#" data-web data-t="webbtn">OPEN THE WEB APP</a>
+<a class="get apk" href="#" data-t="get">GET THE APP</a>
+<p class="dlnote" data-t="dlnote">Downloading on a computer? Copy the file to your Android phone to install it.</p>
 <p class="ios" data-t="ios">On iPhone: tap Share, then Add to Home Screen.</p>
 <div class="how"><b data-t="sth">How to install</b><ol data-t="st"><li>Tap GET THE APP and wait for the file to download.</li><li>Open the file. If Android says it can’t install unknown apps, tap Settings and allow it for this browser.</li><li>Tap Install, then Open.</li></ol><p data-t="warn">Android may show a warning because the app is not from the Play Store. Continue only if you downloaded it from this site.</p></div>
 <a class="cont" id="web" data-t="web" href="https://kartproduction.github.io/kalendarbykasign/">Continue to <b>website</b></a>
@@ -71,7 +74,7 @@ MN=["जनवरी","फेब्रुअरी","मार्च","अप्
 WD=["S","M","T","W","T","F","S"],WN=["आ","सो","मं","बु","बि","शु","श"],DG="०१२३४५६७८९",
 NE={h1:"Kalendar एप अब उपलब्ध छ!",get:"एप डाउनलोड गर्नुहोस्",web:"<b>वेबसाइट</b>मा जानुहोस्",
 h1a:"निःशुल्क · अफलाइन चल्छ · खाता चाहिँदैन। संस्करण:",
-h1b:"स्थापना गर्न मन छैन?",webbtn:"वेब एप खोल्नुहोस्",ios:"आइफोनमा: सेयर थिच्नुहोस्, अनि “Add to Home Screen” छान्नुहोस्।",pv:"गोपनीयता",
+h1b:"स्थापना गर्न मन छैन?",webbtn:"वेब एप खोल्नुहोस्",dlnote:"कम्प्युटरमा डाउनलोड गर्दै हुनुहुन्छ? स्थापना गर्न फाइललाई आफ्नो एन्ड्रोइड फोनमा सार्नुहोस्।",ios:"आइफोनमा: सेयर थिच्नुहोस्, अनि “Add to Home Screen” छान्नुहोस्।",pv:"गोपनीयता",
 sth:"स्थापना कसरी गर्ने",
 st:"<li>एप डाउनलोड गर्नुहोस् थिच्नुहोस् र फाइल डाउनलोड हुन दिनुहोस्।</li><li>फाइल खोल्नुहोस्। एन्ड्रोइडले अज्ञात एप स्थापना गर्न मिल्दैन भनेमा सेटिङ थिचेर यो ब्राउजरका लागि अनुमति दिनुहोस्।</li><li>स्थापना थिच्नुहोस्, अनि खोल्नुहोस्।</li>",
 warn:"एप प्ले स्टोरबाट नआएकाले एन्ड्रोइडले चेतावनी देखाउन सक्छ। यही साइटबाट डाउनलोड गरेको भए मात्र अगाडि बढ्नुहोस्।",
