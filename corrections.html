@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report a wrong date — Kalendar by Kasign</title>
+<meta name="description" content="Found a wrong date, festival or holiday in Kalendar? Tell us and we will check it.">
+<meta property="og:title" content="Report a wrong date — Kalendar by Kasign"><meta property="og:image" content="https://kartproduction.github.io/kalendarbykasign/og-image.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#b5562b">
+<script>try{var kt=localStorage.getItem("kk-th");if(kt)document.documentElement.dataset.theme=kt}catch(e){}</script>
+<style>
+:root{--bg:#f6f4f0;--sf:#fff;--tx:#1f1d1a;--mu:#6f695f;--ac:#b5562b;--ac2:#8f3f1b;--bd:#e7e0d5;--on:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141210;--sf:#1d1a17;--tx:#f2eee8;--mu:#a69e92;--ac:#e08a5c;--ac2:#f0a982;--bd:#38332d;--on:#1b1410}}
+:root[data-theme="dark"]{--bg:#141210;--sf:#1d1a17;--tx:#f2eee8;--mu:#a69e92;--ac:#e08a5c;--ac2:#f0a982;--bd:#38332d;--on:#1b1410}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;justify-content:center;padding:26px 16px 40px}
+.pg{width:100%;max-width:560px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:26px 24px 30px}
+.tb{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:18px}.tb div{display:flex;gap:8px}
+.tb button,.tb a{font:inherit;font-size:14px;line-height:1;padding:9px 15px;border-radius:999px;border:1px solid var(--bd);background:transparent;color:var(--tx);cursor:pointer;text-decoration:none}
+.tb button:hover,.tb a:hover{background:var(--bg)}
+h1{font:700 clamp(28px,7vw,36px)/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 0 10px}
+:lang(ne) h1{line-height:1.4}
+p{margin:10px 0}.mu{color:var(--mu);font-size:14px}
+ul{padding-left:20px;margin:8px 0 18px}li{margin:6px 0}
+.get{display:block;width:100%;text-align:center;padding:16px;border-radius:14px;background:var(--ac);color:var(--on);text-decoration:none;font-size:17px;font-weight:600;box-shadow:0 6px 16px rgba(120,60,20,.22);margin-top:20px}
+.get:hover{background:var(--ac2)}
+.box{border:1px solid var(--bd);border-radius:14px;padding:12px 16px;margin-top:18px;font-size:14.5px}
+</style></head><body><div class="pg">
+<div class="tb"><a href="./" data-t="back">← Main page</a><div><button type="button" id="tm" aria-label="Dark mode">🌙</button><button type="button" id="lt" aria-label="Language: English or Nepali">नेपाली</button></div></div>
+<h1 data-t="h1">Report a wrong date</h1>
+<p data-t="p1">Kalendar’s Nepali dates and festivals are built from published calendar sources, but mistakes can still happen. Tithi, nakshatra, sunrise and sunset are calculated and approximate. If you find something wrong, please tell us.</p>
+<b data-t="sh">Please include</b>
+<ul data-t="ul"><li>The date (AD and BS if you know both).</li><li>What the app shows, and what it should show.</li><li>Where you checked it, for example a printed patro (name and year) or an official notice.</li></ul>
+<a class="get" id="mail" href="#" data-t="btn">Email us the correction</a>
+<div class="box mu" data-t="note">This opens your email app with a short form filled in. Nothing is sent until you press send. We use your message only to check the date and, if you want, to write back.</div>
+<p class="mu" data-t="fix">When we confirm a mistake, we fix it in the next calendar data update, which the app downloads by itself.</p>
+</div>
+<script>
+(function(){
+var r=document.documentElement,$=function(i){return document.getElementById(i)},LNG="en",EN={};
+var NE={back:"← मुख्य पृष्ठ",h1:"मिति गलत भए जानकारी दिनुहोस्",
+p1:"Kalendar का नेपाली मिति र चाडपर्व प्रकाशित पात्रोका स्रोतबाट बनाइएका हुन्, तर गल्ती हुन सक्छ। तिथि, नक्षत्र, सूर्योदय र सूर्यास्त गणनाबाट निकालिएका हुन् र अनुमानित हुन्। केही गलत भेट्नुभयो भने कृपया हामीलाई भन्नुहोस्।",
+sh:"कृपया यी कुरा लेख्नुहोस्",
+ul:"<li>मिति (थाहा भए AD र BS दुवै)।</li><li>एपले के देखाएको छ र के देखाउनुपर्ने हो।</li><li>कहाँ जाँच गर्नुभयो, जस्तै छापिएको पात्रो (नाम र वर्ष) वा आधिकारिक सूचना।</li>",
+btn:"सच्याउनुपर्ने कुरा इमेल गर्नुहोस्",
+note:"यसले तपाईंको इमेल एप खोल्छ र छोटो फारम भरिदिन्छ। पठाउनुहोस् थिच्नुअघि केही पठाइँदैन। तपाईंको सन्देश मिति जाँच्न र चाहनुभए जवाफ दिन मात्र प्रयोग गरिन्छ।",
+fix:"गल्ती पुष्टि भएपछि हामी अर्को पात्रो डेटा अपडेटमा सच्याउँछौं, जुन एपले आफैं डाउनलोड गर्छ।"};
+var els=document.querySelectorAll("[data-t]");for(var i=0;i<els.length;i++)EN[els[i].dataset.t]=els[i].innerHTML;
+var T0="Report a wrong date \u2014 Kalendar by Kasign",T1="मिति गलत भए जानकारी \u2014 Kalendar by Kasign";
+function mail(){var ne=LNG=="ne",sub=ne?"Kalendar मिति सच्याउने सुझाव":"Kalendar date correction",
+ body=ne?"मिति (AD / BS):\n\nएपले देखाएको:\n\nसही हुनुपर्ने:\n\nजाँचको स्रोत (पात्रोको नाम र वर्ष):\n":"Date (AD / BS):\n\nWhat the app shows:\n\nWhat it should be:\n\nWhere you checked (patro name and year):\n";
+ $("mail").href="mailto:khadanacharya@gmail.com?subject="+encodeURIComponent(sub)+"&body="+encodeURIComponent(body)}
+function setLang(l){LNG=l;try{localStorage.setItem("kk-sl",l)}catch(e){}r.lang=l=="ne"?"ne":"en";document.title=l=="ne"?T1:T0;$("lt").textContent=l=="ne"?"English":"नेपाली";
+ var d=document.querySelectorAll("[data-t]");for(var i=0;i<d.length;i++){var k=d[i].dataset.t;d[i].innerHTML=l=="ne"?NE[k]:EN[k]}mail()}
+try{LNG=localStorage.getItem("kk-sl")||localStorage.getItem("kk-lang")||(/^ne/i.test(navigator.language||"")?"ne":"en")}catch(e){}
+$("lt").onclick=function(){setLang(LNG=="ne"?"en":"ne")};setLang(LNG);
+var tb=$("tm");function dk(){return r.dataset.theme=="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches)}
+function tu(){var k=dk();tb.textContent=k?"\u2600\uFE0F":"\uD83C\uDF19";tb.setAttribute("aria-label",k?"Switch to light mode":"Switch to dark mode")}
+tb.onclick=function(){var n=dk()?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("kk-th",n)}catch(e){}tu()};tu();
+})();
+</script></body></html>

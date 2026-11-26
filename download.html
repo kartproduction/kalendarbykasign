@@ -18,15 +18,11 @@
 .pg{width:100%;max-width:520px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:34px 24px 30px;text-align:center}
 .logo{display:inline-flex;align-items:center;gap:12px;font:700 34px Georgia,serif;text-decoration:none;color:var(--tx)}
 .logo img{width:54px;height:54px;border-radius:14px}
-.ph{width:250px;height:500px;margin:34px auto 30px;border-radius:38px;background:var(--ph);padding:9px;box-shadow:0 18px 40px rgba(60,40,20,.2);position:relative}
-.ph::before{content:"";position:absolute;top:9px;left:50%;width:84px;height:18px;margin-left:-42px;border-radius:0 0 12px 12px;background:var(--ph);z-index:2}
-.sc{height:100%;border-radius:30px;overflow:hidden;background:#fbf8f2;color:#26324f;display:flex;flex-direction:column}
-.art{height:41%;flex:none}.art svg{display:block;width:100%;height:100%}
-.pn{padding:12px 16px;flex:1;text-align:left}
-.pn b{display:block;font:600 24px Georgia,serif}.pn small{color:#c26a3d;font-size:11px;letter-spacing:.06em}
-.g{display:grid;grid-template-columns:repeat(7,1fr);margin-top:8px;font-size:11px;text-align:center;row-gap:3px}
-.g i{font-style:normal;color:#c26a3d;font-size:8px;letter-spacing:.05em}.g span.t{background:#c26a3d;color:#fff;border-radius:50%;font-weight:700}
-.g span{line-height:20px}
+.car{position:relative;width:260px;height:462px;margin:30px auto 8px;border-radius:26px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 18px 40px rgba(60,40,20,.2);background:var(--bg);cursor:pointer}
+.car img{display:block;width:100%;height:100%;object-fit:cover}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:7px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.28)}.dots i.on{background:#fff;width:18px;border-radius:4px}
+.cap{margin:10px 0 26px;font-size:13px;color:var(--mu)}
 h1{font:700 clamp(38px,11vw,54px)/1.08 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0 0 26px;letter-spacing:-.01em}
 .get{display:block;width:100%;padding:20px;border-radius:14px;background:var(--ac);color:var(--on);text-decoration:none;font-size:19px;font-weight:600;letter-spacing:.18em;box-shadow:0 6px 16px rgba(120,60,20,.28)}
 .get:hover{background:var(--ac2)}
@@ -45,15 +41,8 @@ html.na:not(.isios) .dlnote{display:block}html.isios .apk,html.isios .how,html.i
 </style></head><body><div class="pg">
 <div class="tb"><button type="button" id="tm" aria-label="Dark mode">🌙</button><button type="button" id="lt" aria-label="Language: English or Nepali">नेपाली</button></div>
 <a class="logo" href="https://kartproduction.github.io/kalendarbykasign/"><img src="data:image/png;base64,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" alt="">Kalendar</a>
-<div class="ph"><div class="sc">
-<div class="art"><svg viewBox="0 0 230 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c7a1"/><stop offset="1" stop-color="#8a97bd"/></linearGradient></defs>
-<rect width="230" height="170" fill="url(#s)"/><circle cx="160" cy="52" r="18" fill="#fff" opacity=".55"/>
-<path d="M0 170V105l30-30 24 22 36-44 40 46 30-24 40 36 30-20v79z" fill="#5b6c91"/>
-<path d="M0 170V128l36-26 30 20 38-30 44 36 36-24 46 22v44z" fill="#3f4d73"/>
-<path d="M0 170v-22l40-22 50 24 60-30 80 28v22z" fill="#26324f"/></svg></div>
-<div class="pn"><small id="yr"></small><b id="mo"></b><div class="g" id="gd"></div></div>
-</div></div>
+<div class="car" id="car" tabindex="0" role="button" aria-label="Next screenshot"><img id="cimg" alt="" width="260" height="462"><div class="dots" id="dots"></div></div>
+<p class="cap" data-t="cap">Screenshots from the app, and calendars made with it</p>
 <h1 data-t="h1">Kalendar App Now Available!</h1>
 <a class="get webbtn" href="#" data-web data-t="webbtn">OPEN THE WEB APP</a>
 <a class="get apk" href="#" data-t="get">GET THE APP</a>
@@ -72,7 +61,7 @@ var r=document.documentElement,$=function(i){return document.getElementById(i)};
 var MO=["January","February","March","April","May","June","July","August","September","October","November","December"],
 MN=["जनवरी","फेब्रुअरी","मार्च","अप्रिल","मे","जुन","जुलाई","अगस्ट","सेप्टेम्बर","अक्टोबर","नोभेम्बर","डिसेम्बर"],
 WD=["S","M","T","W","T","F","S"],WN=["आ","सो","मं","बु","बि","शु","श"],DG="०१२३४५६७८९",
-NE={h1:"Kalendar एप अब उपलब्ध छ!",get:"एप डाउनलोड गर्नुहोस्",web:"<b>वेबसाइट</b>मा जानुहोस्",
+NE={cap:"एपका स्क्रिनसट र एपमै बनाइएका पात्रो",h1:"Kalendar एप अब उपलब्ध छ!",get:"एप डाउनलोड गर्नुहोस्",web:"<b>वेबसाइट</b>मा जानुहोस्",
 h1a:"निःशुल्क · अफलाइन चल्छ · खाता चाहिँदैन। संस्करण:",
 h1b:"स्थापना गर्न मन छैन?",webbtn:"वेब एप खोल्नुहोस्",dlnote:"कम्प्युटरमा डाउनलोड गर्दै हुनुहुन्छ? स्थापना गर्न फाइललाई आफ्नो एन्ड्रोइड फोनमा सार्नुहोस्।",ios:"आइफोनमा: सेयर थिच्नुहोस्, अनि “Add to Home Screen” छान्नुहोस्।",pv:"गोपनीयता",
 sth:"स्थापना कसरी गर्ने",
@@ -85,18 +74,21 @@ LNG="en",T=new Date(),y=T.getFullYear(),m=T.getMonth();
 var ua=navigator.userAgent||"";if(!/Android/i.test(ua))r.classList.add("na");if(/iPhone|iPad|iPod/i.test(ua))r.classList.add("isios");
 var els=document.querySelectorAll("[data-t]");for(var i=0;i<els.length;i++)EN[els[i].dataset.t]=els[i].innerHTML;
 function dg(n){return LNG=="ne"?String(n).replace(/\d/g,function(c){return DG[c]}):String(n)}
-function cal(){var g=$("gd");g.innerHTML="";$("mo").textContent=LNG=="ne"?MN[m]:MO[m];$("yr").textContent=dg(y);
-(LNG=="ne"?WN:WD).forEach(function(s){var e=document.createElement("i");e.textContent=s;g.appendChild(e)});
-var f=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate();
-for(var i=0;i<f+dm;i++){var s=document.createElement("span");if(i>=f){s.textContent=dg(i-f+1);if(i-f+1==T.getDate())s.className="t"}g.appendChild(s)}}
+var SH=[["App screen","एपको स्क्रिन"],["Mountain Serenity calendar","माउन्टेन सेरेनिटी पात्रो"],["Nepali Heritage calendar","नेपाली हेरिटेज पात्रो"],["Nepal Panorama calendar","नेपाल प्यानोरामा पात्रो"]],FL=["","d03.webp","d07.webp","d08.webp"],ci=0,ct=null;
+var dots=$("dots");for(var q=0;q<SH.length;q++)dots.appendChild(document.createElement("i"));
+function show(n){ci=(n+SH.length)%SH.length;var im=$("cimg");im.src="shots/"+(ci==0?"ui-"+(LNG=="ne"?"ne":"en")+".webp":FL[ci]);im.alt=SH[ci][LNG=="ne"?1:0];
+ var d=dots.children;for(var k=0;k<d.length;k++)d[k].className=k==ci?"on":""}
+function nxt(){show(ci+1);if(ct){clearInterval(ct);ct=null}auto()}
+function auto(){if(!matchMedia("(prefers-reduced-motion: reduce)").matches)ct=setInterval(function(){show(ci+1)},4500)}
+$("car").onclick=nxt;$("car").onkeydown=function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();nxt()}};
 function setLang(l){LNG=l;try{localStorage.setItem("kk-sl",l)}catch(e){}
 r.lang=l=="ne"?"ne":"en";document.title=l=="ne"?T1:T0;$("lt").textContent=l=="ne"?"English":"नेपाली";
 var d=document.querySelectorAll("[data-t]");for(var i=0;i<d.length;i++){var k=d[i].dataset.t;d[i].innerHTML=l=="ne"?NE[k]:EN[k]}
 var v=document.querySelector(".ver");if(v){if(l=="ne"&&v.textContent=="latest release")v.textContent="नवीनतम संस्करण";else if(l!="ne"&&v.textContent=="नवीनतम संस्करण")v.textContent="latest release"}
-cal()}
+show(ci)}
 try{LNG=localStorage.getItem("kk-sl")||(/^ne/i.test(navigator.language||"")?"ne":"en")}catch(e){}
 $("lt").onclick=function(){setLang(LNG=="ne"?"en":"ne")};
-setLang(LNG);
+setLang(LNG);auto();
 var tb=$("tm");function dk(){return r.dataset.theme=="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches)}
 function tu(){var k=dk();tb.textContent=k?"\u2600\uFE0F":"\uD83C\uDF19";tb.setAttribute("aria-label",k?"Switch to light mode":"Switch to dark mode")}
 tb.onclick=function(){var n=dk()?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("kk-th",n)}catch(e){}tu()};tu();
